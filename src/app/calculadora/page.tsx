@@ -156,9 +156,9 @@ export default function CalculadoraPage() {
 
             {resultado !== null && (
             <div className={styles.result}>
-                Valorinicial: {formatMoney(capital)}<br/>
-                Total de juros: {formatMoney(resultado - capital)}<br/>
-                Montante final: {formatMoney(resultado)}
+                <p>Valor investido: {formatMoney(capital + (invesMensal * tempo))}</p>
+                <p>Total de juros: {resultado && resultado > capital ? formatMoney(resultado - capital - (invesMensal * tempo)) : "R$: 0,00"}</p>
+                <p>Montante final: {resultado ? formatMoney(resultado) : formatMoney(capital + (invesMensal * tempo))}</p>
             </div>
             )}
 
